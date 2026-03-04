@@ -2,21 +2,21 @@ import { useState, useEffect } from "react";
 
 // ─── THEME & CONSTANTS ───────────────────────────────────────────────────────
 const COLORS = {
-  navy: "#0B1F3A",
-  navyLight: "#122848",
-  navyMid: "#1A3458",
-  gold: "#C9A84C",
-  goldLight: "#E8C96A",
-  amber: "#F5A623",
-  emerald: "#2ECC71",
-  emeraldDark: "#1A7A44",
-  red: "#E74C3C",
+  navy: "#FFFFFF",
+  navyLight: "#F4F7FB",
+  navyMid: "#DDE4EF",
+  gold: "#0B3D91",
+  goldLight: "#1A56C4",
+  amber: "#1A56C4",
+  emerald: "#1A7A44",
+  emeraldDark: "#145C34",
+  red: "#C0392B",
   redDark: "#922B21",
-  yellow: "#F39C12",
-  slate: "#8FA3BF",
-  slateLight: "#C5D4E8",
-  white: "#FFFFFF",
-  offWhite: "#F0F4F9",
+  yellow: "#B7770D",
+  slate: "#4A6080",
+  slateLight: "#2D3E55",
+  white: "#0B1F3A",
+  offWhite: "#0B1F3A",
 };
 
 const STAGES = [
@@ -47,7 +47,7 @@ function ScoreBadge({ score, thresholds = [60, 80] }) {
 function ProgressBar({ value, max = 100, color = COLORS.gold }) {
   const pct = Math.min(100, (value / max) * 100);
   return (
-    <div style={{ background: "#1A3458", borderRadius: 6, height: 10, overflow: "hidden" }}>
+    <div style={{ background: "#DDE4EF", borderRadius: 6, height: 10, overflow: "hidden" }}>
       <div style={{
         width: `${pct}%`, height: "100%", borderRadius: 6,
         background: `linear-gradient(90deg, ${color}, ${color}cc)`,
@@ -136,7 +136,7 @@ function SectionTitle({ children, subtitle }) {
 function MetricBox({ label, value, sub, color = COLORS.gold }) {
   return (
     <div style={{
-      background: COLORS.navy, border: `1px solid ${COLORS.navyMid}`,
+      background: "#EDF2FA", border: `1px solid #DDE4EF`,
       borderRadius: 10, padding: "16px 20px", textAlign: "center"
     }}>
       <div style={{ fontSize: 22, fontWeight: 800, color, marginBottom: 4 }}>{value}</div>
@@ -835,14 +835,14 @@ export default function App() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: `radial-gradient(ellipse at 20% 20%, #0F2A4A 0%, ${COLORS.navy} 60%)`,
+      background: `#FFFFFF`,
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
       color: COLORS.white,
     }}>
       {/* Header */}
       <div style={{
-        background: `linear-gradient(90deg, ${COLORS.navy}, ${COLORS.navyLight})`,
-        borderBottom: `2px solid ${COLORS.gold}44`,
+        background: `#0B1F3A`,
+        borderBottom: `2px solid #C9A84C`,
         padding: "0 32px",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
@@ -852,18 +852,18 @@ export default function App() {
               display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18
             }}>P</div>
             <div>
-              <div style={{ fontSize: 16, fontWeight: 800, color: COLORS.white, letterSpacing: -0.3 }}>Primus Pipeline™</div>
-              <div style={{ fontSize: 10, color: COLORS.slate, letterSpacing: 1.2, textTransform: "uppercase" }}>PI → Automation End-to-End</div>
+              <div style={{ fontSize: 16, fontWeight: 800, color: "#FFFFFF", letterSpacing: -0.3 }}>Primus Pipeline™</div>
+              <div style={{ fontSize: 10, color: "#C9A84C", letterSpacing: 1.2, textTransform: "uppercase" }}>PI → Automation End-to-End</div>
             </div>
           </div>
           <div style={{ fontSize: 12, color: COLORS.slate }}>
-            {intakeData.processName && <span>Process: <strong style={{ color: COLORS.white }}>{intakeData.processName}</strong></span>}
+            {intakeData.processName && <span style={{color:"#C5D4E8"}}>Process: <strong style={{ color: "#FFFFFF" }}>{intakeData.processName}</strong></span>}
           </div>
         </div>
       </div>
 
       {/* Stage Navigator */}
-      <div style={{ background: COLORS.navyLight, borderBottom: `1px solid ${COLORS.navyMid}`, padding: "0 32px" }}>
+      <div style={{ background: "#0B1F3A", borderBottom: `1px solid #1A3458`, padding: "0 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", gap: 0 }}>
           {STAGES.map((s, i) => {
             const isActive = stage === s.id;
