@@ -841,29 +841,29 @@ export default function App() {
     }}>
       {/* Header */}
       <div style={{
-        background: `#0B1F3A`,
+        background: `#FFFFFF`,
         borderBottom: `2px solid #C9A84C`,
         padding: "0 32px",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <div style={{
-              width: 36, height: 36, borderRadius: 8, background: `linear-gradient(135deg, ${COLORS.gold}, ${COLORS.amber})`,
+              width: 36, height: 36, borderRadius: 8, background: `linear-gradient(135deg, #0B1F3A, #1A3458)`,
               display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18
             }}>P</div>
             <div>
-              <div style={{ fontSize: 16, fontWeight: 800, color: "#FFFFFF", letterSpacing: -0.3 }}>Primus Pipeline™</div>
+              <div style={{ fontSize: 16, fontWeight: 800, color: "#0B1F3A", letterSpacing: -0.3 }}>Primus Pipeline™</div>
               <div style={{ fontSize: 10, color: "#C9A84C", letterSpacing: 1.2, textTransform: "uppercase" }}>PI → Automation End-to-End</div>
             </div>
           </div>
           <div style={{ fontSize: 12, color: COLORS.slate }}>
-            {intakeData.processName && <span style={{color:"#C5D4E8"}}>Process: <strong style={{ color: "#FFFFFF" }}>{intakeData.processName}</strong></span>}
+            {intakeData.processName && <span style={{color:"#4A6080"}}>Process: <strong style={{ color: "#0B1F3A" }}>{intakeData.processName}</strong></span>}
           </div>
         </div>
       </div>
 
       {/* Stage Navigator */}
-      <div style={{ background: "#0B1F3A", borderBottom: `1px solid #1A3458`, padding: "0 32px" }}>
+      <div style={{ background: "#FFFFFF", borderBottom: `2px solid #C9A84C`, padding: "0 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", gap: 0 }}>
           {STAGES.map((s, i) => {
             const isActive = stage === s.id;
@@ -871,13 +871,13 @@ export default function App() {
             return (
               <div key={s.id} style={{
                 display: "flex", alignItems: "center", padding: "14px 20px",
-                borderBottom: isActive ? `3px solid ${COLORS.gold}` : "3px solid transparent",
+                borderBottom: isActive ? `3px solid #C9A84C` : "3px solid transparent",
                 cursor: isComplete ? "pointer" : "default",
                 opacity: stage < s.id ? 0.4 : 1,
                 transition: "all 0.2s"
               }} onClick={() => isComplete && setStage(s.id)}>
                 <span style={{ fontSize: 14, marginRight: 8 }}>{s.icon}</span>
-                <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: isActive ? COLORS.gold : COLORS.slate }}>
+                <span style={{ fontSize: 13, fontWeight: isActive ? 700 : 500, color: isActive ? "#C9A84C" : "#4A6080" }}>
                   {s.short}
                 </span>
                 {isComplete && <span style={{ marginLeft: 6, color: COLORS.emerald, fontSize: 12 }}>✓</span>}
